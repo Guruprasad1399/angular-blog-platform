@@ -1,0 +1,9 @@
+<div *ngFor="let post of posts" class="post-card"
+    [routerLink]="['/post', post.id]">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
+    <div class="post-footer">
+        <span>By: {{ post.author }}</span>
+        <span>Date: {{ post.date | date }}</span>
+    </div>
+</div>
