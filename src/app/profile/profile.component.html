@@ -1,0 +1,20 @@
+<div *ngIf="!editMode">
+    <h2>{{ user.username }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <p>Bio: {{ user.bio }}</p>
+    <button (click)="toggleEditMode()">Edit Profile</button>
+</div>
+
+<div *ngIf="editMode">
+    <label>Username:
+        <input [(ngModel)]="user.username">
+    </label>
+    <label>Email:
+        <input [(ngModel)]="user.email">
+    </label>
+    <label>Bio:
+        <textarea [(ngModel)]="user.bio"></textarea>
+    </label>
+    <button (click)="saveProfile()">Save</button>
+    <button (click)="toggleEditMode()">Cancel</button>
+</div>

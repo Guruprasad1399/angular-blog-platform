@@ -1,3 +1,14 @@
+<!-- Navigation links -->
+<div class="navigation">
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/profile">Profile</a>
+    <a routerLink="/create">Create Post</a>
+    <a routerLink="/login">Login</a>
+    <a routerLink="/comments">Comments</a>
+    <a routerLink="/searchresult">Search Results</a>
+</div>
+
+<!-- Existing code for displaying posts -->
 <div *ngFor="let post of posts" class="post-card"
     [routerLink]="['/post', post.id]">
     <h2>{{ post.title }}</h2>

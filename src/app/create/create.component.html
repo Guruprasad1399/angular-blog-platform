@@ -1,0 +1,8 @@
+<h2>Create New Post</h2>
+<label>Title:
+    <input [(ngModel)]="post.title">
+</label>
+<label>Content:
+    <textarea [(ngModel)]="post.content"></textarea>
+</label>
+<button (click)="createPost()">Publish</button>

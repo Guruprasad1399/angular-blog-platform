@@ -1,0 +1,13 @@
+<div *ngIf="statistics">
+    <h2>Dashboard</h2>
+    <div class="stats">
+        <p>Total Posts: {{ statistics.totalPosts }}</p>
+        <p>Total Users: {{ statistics.totalUsers }}</p>
+    </div>
+    <h3>Recent Comments:</h3>
+    <ul class="comments">
+        <li *ngFor="let comment of statistics.recentComments">
+            <span>{{ comment.username }}:</span> {{ comment.comment }}
+        </li>
+    </ul>
+</div>
