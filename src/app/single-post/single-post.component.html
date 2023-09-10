@@ -1,8 +1,12 @@
-<div *ngIf="post">
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.content }}</p>
-    <div class="post-footer">
-        <span>By: {{ post.author }}</span>
-        <span>Date: {{ post.date }}</span>
+<app-header></app-header>
+
+<div class="post-container" *ngIf="post">
+    <div class="post-inner">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>
+        <div class="post-footer">
+            <span>By: {{ post.author }}</span>
+            <span>Date: {{ post.date }}</span>
+        </div>
     </div>
 </div>

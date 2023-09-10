@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,11 +12,11 @@ export class RegisterComponent {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {  
     this.registerForm = this.fb.group({
-      username: ['', [Validators.required]],
+      username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]]
     });
   }
@@ -23,6 +24,9 @@ export class RegisterComponent {
   onSubmit(): void {
     if (this.registerForm.valid) {
       // Call your service to register the user
+      
+      // If the registration is successful, navigate to the login screen
+      this.router.navigate(['/login']);  
     }
   }
 }

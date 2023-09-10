@@ -1,13 +1,33 @@
-<div *ngIf="statistics">
+<app-header></app-header>
+
+<div class="dashboard" *ngIf="statistics">
     <h2>Dashboard</h2>
-    <div class="stats">
-        <p>Total Posts: {{ statistics.totalPosts }}</p>
-        <p>Total Users: {{ statistics.totalUsers }}</p>
+
+    <!-- Statistics Section -->
+    <div class="stats-section">
+        <div class="card">
+            <h3>Total Posts</h3>
+            <p>{{ statistics.totalPosts }}</p>
+        </div>
+        <div class="card">
+            <h3>Total Users</h3>
+            <p>{{ statistics.totalUsers }}</p>
+        </div>
     </div>
-    <h3>Recent Comments:</h3>
-    <ul class="comments">
-        <li *ngFor="let comment of statistics.recentComments">
-            <span>{{ comment.username }}:</span> {{ comment.comment }}
-        </li>
-    </ul>
+
+    <!-- Recent Comments Section -->
+    <div class="comments-section">
+        <h3>Recent Comments</h3>
+        <ul class="comments">
+            <li *ngFor="let comment of statistics.recentComments">
+                <strong>{{ comment.username }}</strong>: {{ comment.comment }}
+            </li>
+        </ul>
+    </div>
+
+    <!-- Additional Info Section (Placeholder) -->
+    <div class="additional-info">
+        <h3>Other Relevant Information</h3>
+        <p>Data</p>
+    </div>
 </div>

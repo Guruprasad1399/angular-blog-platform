@@ -1,3 +1,9 @@
-<h2>Error</h2>
-<p>{{ errorMessage }}</p>
-<a routerLink="/">Back to Home</a>
+<app-header></app-header>
+
+<div class="error-container">
+    <h2>Error</h2>
+    <div class="error-message">
+        <p>{{ errorMessage }}</p>
+    </div>
+    <a class="back-home-btn" routerLink="/">Back to Home</a>
+</div>

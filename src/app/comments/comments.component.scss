@@ -1,0 +1,85 @@
+@import "../../styles.scss";
+
+.comment-actions {
+    display: flex;
+    width:75%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .sort-options {
+        display: flex;
+        align-items: center;
+
+        select {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: 2px solid $secondary-color;
+            background-color: rgba(0, 0, 0, 1);
+            color: white;
+            border-radius: 5px;
+        }
+    }
+}
+
+.comment-list {
+    width: 75%;  // Set the width to 75%
+    margin: 0 auto;  // Center the element
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+
+    li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .comment-username {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .comment-actions {
+            margin-top: 10px;
+
+            button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: white;
+                margin-right: 10px;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+
+            .upvote, .downvote {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+.load-more {
+    text-align: center;
+    margin-top: 20px;
+
+    button {
+        padding: 10px 20px;
+        background-color: $secondary-color;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+        }
+    }
+}

@@ -20,6 +20,20 @@ export class PostService {
       content: 'Some interesting content goes here.',
       author: 'Jane Smith',
       date: new Date()
+    },
+    {
+      id: 3,
+      title: 'Another Interesting Post',
+      content: 'Some interesting content goes here.',
+      author: 'Jane Smith',
+      date: new Date()
+    },
+    {
+      id: 4,
+      title: 'Another Interesting Post',
+      content: 'Some interesting content goes here.',
+      author: 'Jane Smith',
+      date: new Date()
     }
   ];
 

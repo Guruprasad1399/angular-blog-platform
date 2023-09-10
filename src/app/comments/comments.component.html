@@ -1,6 +1,27 @@
-<h2>Comments</h2>
+<app-header></app-header>
+
+<div class="comment-actions">
+    <div class="sort-options">
+        Sort by:
+        <select>
+            <option value="top">Top</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+        </select>
+    </div>
+</div>
+
 <ul class="comment-list">
     <li *ngFor="let comment of comments">
-        <span>{{ comment.username }}:</span> {{ comment.comment }}
+        <span class="comment-username">{{ comment.username }}:</span>
+        {{ comment.comment }}
+        <div class="comment-actions">
+            <button class="upvote">👍</button>
+            <button class="downvote">👎</button>
+        </div>
     </li>
 </ul>
+
+<div class="load-more">
+    <button>Load More Comments</button>
+</div>

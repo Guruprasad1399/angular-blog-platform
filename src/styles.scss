@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+// Variables
+$post-border-color: #ddd;
+$post-footer-font-size: 0.9em;
+$post-footer-color: #666;
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+
+// General styles
+body {
+  background: linear-gradient(to bottom, $primary-color, $secondary-color);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}

@@ -1,8 +1,14 @@
-<h2>Create New Post</h2>
-<label>Title:
-    <input [(ngModel)]="post.title">
-</label>
-<label>Content:
-    <textarea [(ngModel)]="post.content"></textarea>
-</label>
-<button (click)="createPost()">Publish</button>
+<app-header></app-header>
+
+<div class="create-post-container">
+    <h2>Create New Post</h2>
+    <div class="form-group">
+        <label>Title:</label>
+        <input class="form-control" [(ngModel)]="post.title">
+    </div>
+    <div class="form-group">
+        <label>Content:</label>
+        <textarea class="form-control" [(ngModel)]="post.content"></textarea>
+    </div>
+    <button class="publish-btn" (click)="createPost()">Publish</button>
+</div>

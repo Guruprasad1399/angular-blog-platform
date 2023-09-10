@@ -1,0 +1,67 @@
+@import "../../styles.scss";
+
+form {
+    max-width: 500px;
+    margin: 5% auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1); // semi-transparent white
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    color: white;
+
+    div {
+        margin-bottom: 20px;
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid $secondary-color;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.2); // giving input a bit of opacity
+            color: white;
+            transition: border-color 0.3s;
+
+            &:focus {
+                outline: none;
+                border-color: darken($secondary-color, 10%); // darkening the border color on focus
+            }
+        }
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: $secondary-color;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: darken($secondary-color, 10%); // darken button color on hover
+        }
+    }
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+
+    a {
+        color: #000; // using the secondary color for the link
+        text-decoration: none;   // removing the underline from the link
+        transition: color 0.3s;
+
+        &:hover {
+            color: darken(#000, 10%); // darken link color on hover
+        }
+    }
+}

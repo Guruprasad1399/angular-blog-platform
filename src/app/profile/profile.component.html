@@ -1,20 +1,33 @@
-<div *ngIf="!editMode">
-    <h2>{{ user.username }}</h2>
-    <p>Email: {{ user.email }}</p>
-    <p>Bio: {{ user.bio }}</p>
-    <button (click)="toggleEditMode()">Edit Profile</button>
-</div>
+<app-header></app-header>
 
-<div *ngIf="editMode">
-    <label>Username:
-        <input [(ngModel)]="user.username">
-    </label>
-    <label>Email:
-        <input [(ngModel)]="user.email">
-    </label>
-    <label>Bio:
-        <textarea [(ngModel)]="user.bio"></textarea>
-    </label>
-    <button (click)="saveProfile()">Save</button>
-    <button (click)="toggleEditMode()">Cancel</button>
+<div class="profile-container">
+    <!-- Viewing Mode -->
+    <div *ngIf="!editMode">
+        <h2>{{ user.username }}</h2>
+        <div class="user-details">
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Bio:</strong> {{ user.bio }}</p>
+        </div>
+        <button class="edit-btn" (click)="toggleEditMode()">Edit Profile</button>
+    </div>
+
+    <!-- Editing Mode -->
+    <div *ngIf="editMode" class="edit-section">
+        <div class="input-group">
+            <label for="username">Username:</label>
+            <input id="username" [(ngModel)]="user.username">
+        </div>
+        <div class="input-group">
+            <label for="email">Email:</label>
+            <input id="email" [(ngModel)]="user.email">
+        </div>
+        <div class="input-group">
+            <label for="bio">Bio:</label>
+            <textarea id="bio" [(ngModel)]="user.bio"></textarea>
+        </div>
+        <div class="action-buttons">
+            <button class="save-btn" (click)="saveProfile()">Save</button>
+            <button class="cancel-btn" (click)="toggleEditMode()">Cancel</button>
+        </div>
+    </div>
 </div>

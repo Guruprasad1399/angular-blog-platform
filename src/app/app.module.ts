@@ -17,6 +17,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { SearchResultsComponent } from './search-result/search-result.component';
 import { ErrorComponent } from './error/error.component';
 import { CustomErrorHandler } from './error-handler.service';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CustomErrorHandler } from './error-handler.service';
     DashboardComponent,
     CommentsComponent,
     SearchResultsComponent,
-    ErrorComponent
+    ErrorComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
