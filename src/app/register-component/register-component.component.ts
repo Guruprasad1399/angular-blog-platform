@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register-component.component.html',
   styleUrls: ['./register-component.component.scss']
 })
-
 export class RegisterComponent {
 
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {  
+  constructor(
+    private fb: FormBuilder, 
+    private router: Router,
+    private userService: UserService
+  ) {  
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -23,10 +27,14 @@ export class RegisterComponent {
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      // Call your service to register the user
-      
-      // If the registration is successful, navigate to the login screen
-      this.router.navigate(['/login']);  
+      this.userService.registerUser(this.registerForm.value).subscribe(response => {
+        // Handle the response from the backend
+        // If the registration is successful, navigate to the login screen
+        this.router.navigate(['/login']);  
+      }, error => {
+        // Handle any errors from the backend, e.g., show a message to the user
+        console.error(error);
+      });
     }
   }
 }
