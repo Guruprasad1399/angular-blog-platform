@@ -4,6 +4,7 @@ import { Post } from './home/home.component';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PostService {
   private posts: Post[] = [
     {
