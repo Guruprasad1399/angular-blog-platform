@@ -8,7 +8,7 @@ import { environment } from '../environments/config';
 
 export class UserService {
 
-  private apiUrl = `${environment.backendUrl}/auth/register`;
+  private apiUrl = `${environment.backendUrl}/register`;
 
   constructor(private http: HttpClient) { }
 

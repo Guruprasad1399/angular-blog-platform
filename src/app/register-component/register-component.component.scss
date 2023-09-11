@@ -4,17 +4,18 @@ form {
     max-width: 500px;
     margin: 5% auto;
     padding: 40px;
-    background-color: rgba(255, 255, 255, 0.1); // semi-transparent white
+    background-color:#e7e7e7; // Using the light background color for better readability
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    color: white;
+    color: $text-color; // Using the general text color
 
-    div {
+    .input-group {
         margin-bottom: 20px;
 
         label {
             display: block;
             margin-bottom: 10px;
+            color: $footer-font-color; // Using footer font color for better contrast
         }
 
         input {
@@ -22,8 +23,8 @@ form {
             padding: 10px 15px;
             border: 2px solid $secondary-color;
             border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.2); // giving input a bit of opacity
-            color: white;
+            background-color: rgba(255, 255, 255, 0.95); // Lightened the background for readability
+            color: $text-color; // Using the general text color
             transition: border-color 0.3s;
 
             &:focus {
@@ -33,11 +34,11 @@ form {
         }
     }
 
-    button {
+    .submit-btn {
         display: block;
         width: 100%;
         padding: 10px;
-        background-color: $secondary-color;
+        background-color: $tertiary-color; // Using the tertiary color
         border: none;
         border-radius: 10px;
         color: white;
@@ -45,7 +46,7 @@ form {
         transition: background-color 0.3s;
 
         &:hover {
-            background-color: darken($secondary-color, 10%); // darken button color on hover
+            background-color: darken($tertiary-color, 10%); // darken button color on hover
         }
     }
 }
@@ -56,12 +57,18 @@ form {
     font-size: 0.9em;
 
     a {
-        color: #000; // using the secondary color for the link
-        text-decoration: none;   // removing the underline from the link
+        color: $tertiary-color; // Using the tertiary color for the link
+        text-decoration: none;   // Removing the underline from the link
         transition: color 0.3s;
 
         &:hover {
-            color: darken(#000, 10%); // darken link color on hover
+            color: darken($tertiary-color, 10%); // Darken link color on hover
         }
     }
+}
+
+.error-message {
+    color: red;
+    margin: 10px 0;
+    text-align: center;
 }

@@ -2,18 +2,36 @@
 
 <!-- Posts -->
 <div class="posts-section">
+    <div *ngIf="!posts.length" class="no-posts-message">
+        No posts available yet.
+    </div>
+
     <div *ngFor="let post of posts" class="post-card"
         [routerLink]="['/post', post.id]">
-        <div class="post-image">
-            <i class="fa fa-image"></i>
+        <div class="post-image" *ngIf="post.image_filename; else noImage">
+            <img [src]="'http://localhost:5000/images/' + post.image_filename"
+                alt="Post Image">
         </div>
+        <ng-template #noImage>
+            <div class="post-image">
+                <i class="fa fa-image"></i>
+            </div>
+        </ng-template>
         <div class="post-content">
             <h2>{{ post.title }}</h2>
-            <p>{{ post.content }}</p>
+            <p>{{ post.body }}</p>
         </div>
         <div class="post-footer">
-            <span><i class="fa fa-user"></i> {{ post.author }}</span>
-            <span><i class="fa fa-calendar"></i> {{ post.date | date }}</span>
+            <span><i class="fa fa-user"></i> {{ post.author_id }}</span>
+            <span><i class="fa fa-calendar"></i> {{ post.timestamp }}</span>
         </div>
     </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination-controls">
+        <button (click)="onPreviousPage()" [disabled]="currentPage === 1">Previous</button>
+        <span>Page {{currentPage}} of {{totalPages}}</span>
+        <button (click)="onNextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+
 </div>

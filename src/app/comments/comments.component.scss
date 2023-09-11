@@ -2,7 +2,7 @@
 
 .comment-actions {
     display: flex;
-    width:75%;
+    width: 75%;
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 20px;
@@ -10,6 +10,7 @@
     .sort-options {
         display: flex;
         align-items: center;
+        color: $text-color;
 
         select {
             margin-left: 10px;
@@ -23,15 +24,16 @@
 }
 
 .comment-list {
-    width: 75%;  // Set the width to 75%
-    margin: 0 auto;  // Center the element
-    background-color: rgba(255, 255, 255, 0.1);
+    width: 75%;
+    margin: 0 auto;
+    background-color: #e5e5e5;
     padding: 20px;
     border-radius: 10px;
 
     li {
         padding: 10px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid $tertiary-color;
+        color: $text-color;
 
         &:last-child {
             border-bottom: none;
@@ -49,9 +51,7 @@
                 background: none;
                 border: none;
                 cursor: pointer;
-                color: white;
-                margin-right: 10px;
-                transition: color 0.3s;
+                color: $text-color;
 
                 &:hover {
                     color: $secondary-color;

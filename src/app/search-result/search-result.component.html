@@ -1,6 +1,12 @@
 <app-header></app-header>
 
 <div class="search-container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search..." [(ngModel)]="searchQuery">
+        <button (click)="performSearch()">Search</button>
+    </div>
+
     <h2>Search Results</h2>
     <ul class="search-results">
         <li *ngFor="let result of searchResults">{{ result }}</li>

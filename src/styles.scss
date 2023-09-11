@@ -1,14 +1,47 @@
 // Variables
-$post-border-color: #ddd;
-$post-footer-font-size: 0.9em;
-$post-footer-color: #666;
-$primary-color: #2c3e50;
-$secondary-color: #3498db;
+$primary-color: #2ecc71;        // Primary color (green)
+$secondary-color: #34495e;      // Secondary color (dark blue-gray)
+$tertiary-color: #3498db;       // Tertiary color (light blue)
+$accent-color: #e67e22;         // Accent color (orange)
+$text-color: #333333;           // Text color (dark gray)
+$post-footer-font-size: 0.9em;  // Footer font size (smaller than the body text)
+$footer-font-color: #555555;    // Footer font color
+$footer-font-size: 1em;         // Footer font size
+$post-footer-color: #A9A9A9;
+$post-border-color: #3498db; // A shade of blue
 
 // General styles
 body {
-  background: linear-gradient(to bottom, $primary-color, $secondary-color);
-  font-family: 'Arial', sans-serif;
+  background: #f8f9fa;          // Light background color
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  color: $text-color;
+}
+
+a {
+  color: $tertiary-color;
+  text-decoration: none;
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+button {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+// Footer-specific styles
+.footer {
+  font-size: $footer-font-size;
+  color: $footer-font-color;
 }

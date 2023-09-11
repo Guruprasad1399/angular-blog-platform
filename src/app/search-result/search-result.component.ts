@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SearchResultsComponent implements OnInit {
 
   searchResults: string[] = [];
+  searchQuery: string = '';  // Added this property for the search query
 
   constructor() { }
 
@@ -27,4 +28,14 @@ export class SearchResultsComponent implements OnInit {
     ];
   }
 
+  performSearch(): void {
+    // Implement your search logic here
+    // For now, let's filter the dummy results based on the searchQuery
+    this.loadDummySearchResults();
+    if (this.searchQuery) {
+      this.searchResults = this.searchResults.filter(result => 
+        result.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    }
+  }
 }

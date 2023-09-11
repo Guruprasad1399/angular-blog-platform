@@ -1,26 +1,32 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div>
+    <div class="input-group">
         <label for="username">Username</label>
         <input id="username" formControlName="username">
     </div>
 
-    <div>
+    <div class="input-group">
         <label for="email">Email</label>
         <input id="email" type="email" formControlName="email">
     </div>
 
-    <div>
+    <div class="input-group">
         <label for="password">Password</label>
         <input id="password" type="password" formControlName="password">
     </div>
 
-    <div>
+    <div class="input-group">
         <label for="confirmPassword">Confirm Password</label>
         <input id="confirmPassword" type="password"
             formControlName="confirmPassword">
     </div>
 
-    <button type="submit">Register</button>
+    <button type="submit" class="submit-btn">Register</button>
+
+    <!-- Display error message -->
+    <div *ngIf="errorMessage" class="error-message">
+        {{errorMessage}}
+    </div>
+
     <div class="register-link">
         Already have an account? <a routerLink="/login">Login</a>
     </div>

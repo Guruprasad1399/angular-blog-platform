@@ -15,6 +15,10 @@
             <button type="submit">Login</button>
         </div>
     </form>
+    <!-- Display error message -->
+    <div *ngIf="errorMessage" class="error-message">
+        {{errorMessage}}
+    </div>
     <div class="register-link">
         Don't have an account? <a routerLink="/register">Sign Up</a>
     </div>
